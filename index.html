@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mi Tienda Online</title>
+    <!--llamada de shortcut icon-->
+    <link rel="shorcut icon" href="images/a.png">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--Compiled FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/cart.js" async></script>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>  
+
+<header>
+  <div class="jumbotron text-center estiloheader">
+    <div style="margin: 0 auto;">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-estiloheader">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Categoría</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sobre Nosotros</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <div id="cart-info" class="nav-info cart-info">
+  <span class="cart-info__icon"><i class="fas fa-shopping-cart"></i></span>
+  <p><span id="item-count">0</span> items
+  </p>
+</div>
+<!--CARRITO DE COMPRAS-->
+  <section class="cart" id="cart">
+    <h1 class="section-header">CART</h1>
+    <div class="cart-row">
+      <span class="cart-item cart-header cart-column">ITEM</span>
+      <span class="cart-price cart-header cart-column">PRICE</span>
+      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-total">
+      <strong class="cart-total-title">Total</strong>
+      <span class="cart-total-price">$0</span>
+    </div>
+
+    <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+  </section>
+    </nav>
+  </div>
+
+</header>
+
+<!--Botones de Búsqueda sobre Carrusel-->
+<div id="filterButtons" style="text-align: center;">
+  <button class="btn active" onclick="filterSelection('all')">All</button>
+  <button class="btn" onclick="filterSelection('Roses')">Roses</button>
+  <button class="btn" onclick="filterSelection('Tulips')">Tulips</button>
+  <button class="btn" onclick="filterSelection('Orchids')">Orchids</button>
+</div>
+
+<!--Carrusel-->
+<div class="container" style="height: 550px; width: 1100px;">
+    <div class="row" style="text-align: center;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+          <!--Wrapper for Slides-->
+          <div class="carousel-inner" >
+            <div class="carousel-item active">
+              <img src="images/12.jpg" alt="image-2" >
+              <div class="align-absolute">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/2.jpg" alt="image-3" >
+              <div class="align-absolute">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/3.jpg" alt="image-4" >
+              <div class="align-absolute">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/11.jpg" alt="image-1" >
+              <div class="align-absolute">
+              </div>
+            </div>
+          </div>
+          <!--Controles Izquierda y Derecha-->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <!--<span class="sr-only">Previous</span>-->
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <!--<span class="sr-only">Next</span>-->
+          </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  
+  <!--Row 1-->
+  <div class="row">
+    <div class="products">
+      <div class="product Roses">
+        <img src="images/roses.jpg" class="product__image" alt="Roses">
+        <h5 class="product-title">DREAM SPRING</h5>
+        <p>Arrangement of mixed Roses</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$38</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product Roses">
+        <img src="images/roses1.jpg" class="product__image" alt="Roses1">
+        <h5 class="product-title">LOVELY  ROSES</h5>
+        <p>Arrangement of mixed Roses just for you</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$40</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product Roses">
+        <img src="images/roses2.jpg" class="product__image" alt="Roses2">
+        <h5 class="product-title">MY SWEET  ROSES</h5>
+        <p>Arrangement of mixed Roses just for you</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$40</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Row 2-->
+  <div class="row">
+    <div class="products">
+
+        <div class="product Tulips">
+        <img src="images/tulips.jpg" class="product__image" alt="Tulips">
+        <h5 class="product-title">BEAUTIFUL AFTERNOOM</h5>
+      <p>Arrangement of mixed Tulips just for U!</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$38</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product Tulips">
+        <img src="images/tulips1.jpg" class="product__image" alt="Tulips1">
+        <h5 class="product-title">IN THE POCKET</h5>
+        <p> Arrangement of mixed Tulips just for U</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$48</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product Tulips">
+        <img src="images/tulips2.jpg" class="product__image" alt="Tulips2">
+        <h5 class="product-title">BEAUTIFUL JUST FOR YOU</h5>
+      <p>Arrangement of mixed Tulips just for You!</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$53</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!--Row 3-->
+  <div class="row">
+    <div class="products">
+      <div class="product Orchids">
+        <img src="images/orchids.jpg" class="product__image" alt="Orchids">
+        <h5 class="product-title"> ORCHIDS ARE AWESOME</h5>
+        <p>Arrangement of mixed Orchids just for a present</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$43</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product Orchids">
+        <img src="images/orchids1.jpg" class="product__image" alt="Orchids1">
+        <h5 class="product-title"> ORCHIDS FOR A LIFE</h5>
+        <p>Arrangement of mixed Orchids in a great jar</p> 
+        <div class="shop-item-details">
+          <h3 class="product__price">$48</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product Orchids">
+        <img src="images/orchids2.jpg" class="product__image" alt="Orchids2">
+        <h5 class="product-title"> AWESOME & BEAUTIFUL</h5>
+          <p> Arrangement of mixed Orchids just for a present</p>
+        <div class="shop-item-details">
+          <h3 class="product__price">$53</h3>
+          <button class="btn btn--primary ADD_TO_CART">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
